@@ -16,3 +16,4 @@
 |BERT NLP - Session 11 - Q&A using BERT|BertForQuestionAnswering, BertTokenizer, PyTorch|
 |BERT NLP - Session 12 - IMDB - Text Classification using BERT|DistilBERT, Tensorflow, Datasets, AutoTokenizer, DataCollatorWithPadding, TFAutoModelForSequenceClassification, Create_Optimizer|
 |BERT NLP - Session 13 - Named Entity Recognition or Token Classification using BERT|AutoTokenizer, Tensorflow, DistilBERT, DataCollatorForTokenClassification, Create_Optimizer, TFAutoModelForTokenClassification|
+|BERT NLP - Session 14 - Question Answering using BERT|AutoTokenizer, Tensorflow, DistilBERT, DefaultDataCollator, Create_Optimizer, TFAutoModelForQuestionAnswering|
