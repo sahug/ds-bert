@@ -14,3 +14,4 @@
 |BERT NLP - Session 9 - Step by Step BERT|Tensorflow, ModelCheckpoint, TFAutoModel, AutoTokenizer, TQDM, Tokenizers, AUTOTUNE, Tensorflow Dataset|
 |BERT NLP - Session 10 - Custom Training Q&A using BERT|QuestionAnsweringModel, QuestionAnsweringArgs|
 |BERT NLP - Session 11 - Q&A using BERT|BertForQuestionAnswering, BertTokenizer, PyTorch|
+|BERT NLP - Session 12 - IMDB - Text Classification using BERT|DistilBERT, Tensorflow, Datasets, AutoTokenizer, DataCollatorWithPadding, TFAutoModelForSequenceClassification, Create_Optimizer|
