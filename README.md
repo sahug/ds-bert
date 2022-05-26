@@ -1,5 +1,15 @@
 ### **HuggingFace**: https://huggingface.co/ 
 
+### **Steps**
+**Tensorflow**
+- Load Data
+- Split data to Train and Test
+- Preprocess Data using Tensorflow Hub
+- Encode data using Tensorflow Hub to input to BERT
+- Build, Compile and Train model
+
+**BERT**
+
 ### **Preprocess**
 
 The standard or conventional procedure of pre-processing is a little bit tedious and also a user-centric procedure. The below steps are carried out under the hood of standard pre-processing techniques:
