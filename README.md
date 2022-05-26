@@ -116,3 +116,4 @@ When using BERT alone we don't need to build the Encoder seperatly as the BERT M
 |BERT NLP - Session 12 - IMDB - Text Classification using BERT|DistilBERT, Tensorflow, Datasets, AutoTokenizer, DataCollatorWithPadding, TFAutoModelForSequenceClassification, Create_Optimizer|
 |BERT NLP - Session 13 - Named Entity Recognition or Token Classification using BERT|AutoTokenizer, Tensorflow, DistilBERT, DataCollatorForTokenClassification, Create_Optimizer, TFAutoModelForTokenClassification|
 |BERT NLP - Session 14 - Question Answering using BERT|AutoTokenizer, Tensorflow, DistilBERT, DefaultDataCollator, Create_Optimizer, TFAutoModelForQuestionAnswering|
+|BERT NLP - Sentiment140 - Sentiment Analysis using Tensorflow Hub and BERT|Tensorflow Hub, KerasLayer, Functional API|
