@@ -53,7 +53,14 @@ The main tool for processing textual data is a tokenizer. Load a pretrained toke
 from transformers import AutoTokenizer
 
 tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
+
+encoded_input = tokenizer(sentences, padding=True, truncation=True, return_tensors="tf")
 ```
+- **padding=True**: Applies padding so that the length of each sentence is same.
+- **truncation=True**: Sometimes a sequence may be too long for a model to handle. In this case, you will need to truncate the sequence to a shorter length.
+- **return_tensors=tf**: Return the actual tensors that are fed to the model. **pt**: PyTorch or **tf**: Tensorflow.
+
+
 Then pass your sentence to the tokenizer.
 
 ```
