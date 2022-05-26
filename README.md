@@ -21,9 +21,7 @@ TensorFlow Hub offers a variety of BERT and BERT-like models. For each BERT enco
 
 ```
 preprocess = hub.load('https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1')
-
 or
-
 preprocess = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1")
 
 input = preprocess(["This is an amazing movie!"])
@@ -64,7 +62,6 @@ encoded_input = tokenizer(sentences, padding=True, truncation=True, return_tenso
 - **padding=True**: Applies padding so that the length of each sentence is same.
 - **truncation=True**: Sometimes a sequence may be too long for a model to handle. In this case, you will need to truncate the sequence to a shorter length.
 - **return_tensors=tf**: Return the actual tensors that are fed to the model. **pt**: PyTorch or **tf**: Tensorflow.
-
 
 Then pass your sentence to the tokenizer.
 
