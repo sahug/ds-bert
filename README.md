@@ -21,12 +21,10 @@ TensorFlow Hub offers a variety of BERT and BERT-like models. For each BERT enco
 
 ```
 preprocess = hub.load('https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1')
-encoder = hub.load("https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/4")
 
 or
 
 preprocess = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1")
-encoder = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/4")
 
 input = preprocess(["This is an amazing movie!"])
 
@@ -87,6 +85,23 @@ The tokenizer returns a dictionary with three important itmes:
 - **token_type_ids** identifies which sequence a token belongs to when there is more than one sequence.
 
 **Note:** The above preprocessing is for Text data. There are different preprocessing steps for Image and Audio data. You can check here: https://huggingface.co/docs/transformers/preprocessing
+
+### **Encoder**
+When using the Tensorflow for BERT we need Encoder. The Encoder's outputs are the **pooled_output** to represents each input sequence as a whole, and the **sequence_output** to represent each input token in context. Either of those can be used as input to further model building.
+
+The **output** of the encoder **pooled_output** or **sequence_output** will be an input to the BERT Model. 
+The **input** to the Encoder is the Preprocessed Data.
+
+```
+encoder = hub.load("https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/4")
+or
+encoder = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/4")
+
+input = encoder(preprocess(["This is an amazing movie!"]))
+
+```
+When using BERT alone we don't need to build the Encoder seperatly as the BERT Model will take care of this. We only need to pre process the data for BERT.
+
 
 **Table**
 |Project|Coverage|
