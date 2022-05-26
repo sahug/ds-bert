@@ -22,7 +22,13 @@ TensorFlow Hub offers a variety of BERT and BERT-like models. For each BERT enco
 ```
 preprocess = hub.load('https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1')
 
+or
+
+bert_preprocess = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1")
+bert_encoder = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/4")
+
 input = preprocess(["This is an amazing movie!"])
+
 ```
 ```
 {'input_word_ids': <tf.Tensor: shape=(1, 128), dtype=int32, numpy=
