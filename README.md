@@ -21,6 +21,7 @@ TensorFlow Hub offers a variety of BERT and BERT-like models. For each BERT enco
 
 ```
 preprocess = hub.load('https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1')
+encoder = hub.load("https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/4")
 
 or
 
