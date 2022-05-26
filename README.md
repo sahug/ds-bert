@@ -79,6 +79,7 @@ The tokenizer returns a dictionary with three important itmes:
 - **attention_mask** indicates whether a token should be attended to or not.
 - **token_type_ids** identifies which sequence a token belongs to when there is more than one sequence.
 
+**Note:** The above preprocessing is for Text data. There are different preprocessing steps for Image and Audio data. You can check here: https://huggingface.co/docs/transformers/preprocessing
 
 **Table**
 |Project|Coverage|
