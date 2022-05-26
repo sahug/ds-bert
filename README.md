@@ -1,4 +1,76 @@
-**HuggingFace**: https://huggingface.co/ 
+### **HuggingFace**: https://huggingface.co/ 
+
+### **Preprocess**
+
+The standard or conventional procedure of pre-processing is a little bit tedious and also a user-centric procedure. The below steps are carried out under the hood of standard pre-processing techniques:
+
+- Lower casing the corpus 
+- Removing the punctuation 
+- Removing the stopwords 
+- Tokenizing the corpus 
+- Stemming and Lemmatization
+- Word embeddings using CountVectorizer and TF-IDF  
+
+Nowadays all these pre-processing steps can be carried out by using transfer learning modules like BERT. BERT does this using the pre trained model. So we don't have to perform each of these tasks individually. Half of BERT’s success can be attributed to this pre-training phase. 
+
+There are 2 ways we can pre-process our data.
+
+#### **1. Tensorflow Hub:**
+
+TensorFlow Hub offers a variety of BERT and BERT-like models. For each BERT encoder, there is a matching preprocessing model. It transforms raw text to the numeric input tensors expected by the encoder, using TensorFlow ops provided by the **TF.text** library. Unlike preprocessing with pure Python, these ops can become part of a TensorFlow model for serving directly from text inputs. Each preprocessing model from TF Hub is already configured with a vocabulary and its associated text normalization logic and needs no further set-up.
+
+```
+preprocess = hub.load('https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1')
+
+input = preprocess(["This is an amazing movie!"])
+```
+```
+{'input_word_ids': <tf.Tensor: shape=(1, 128), dtype=int32, numpy=
+  array([[ 101, 2023, 2003, 2019, 6429, 3185,  999,  102,    0,  ...]])>,
+ 'input_mask': <tf.Tensor: shape=(1, 128), dtype=int32, numpy=
+  array([[   1,    1,    1,    1,    1,    1,    1,    1,    0,  ...,]])>,
+ 'input_type_ids': <tf.Tensor: shape=(1, 128), dtype=int32, numpy=
+  array([[   0,    0,    0,    0,    0,    0,    0,    0,    0,  ...,]])>}
+ ```
+The tokenizer returns a dictionary with three important itmes:
+
+- **input_word_ids** are the indices corresponding to each token in the sentence.
+- **input_mask** indicates whether a token should be attended to or not.
+- **input_type_ids** identifies which sequence a token belongs to when there is more than one sequence.
+
+Calling **preprocess()** like this transforms raw text inputs into a fixed-length input sequence for the BERT encoder. You can see that it consists of a tensor input_word_ids with numerical ids for each tokenized input, including start, end and padding tokens, plus two auxiliary tensors: an input_mask (that tells non-padding from padding tokens) and input_type_ids for each token (that can distinguish multiple text segments per input, which we will discuss below).
+
+#### **2. BERT Pre-processing Model**
+
+Before you can use your data in a model, the data needs to be processed into an acceptable format for the model. A model does not understand raw text, images or audio. These inputs need to be converted into numbers and assembled into tensors. In this tutorial, you will:
+
+- Preprocess textual data with a tokenizer.
+- Preprocess image or audio data with a feature extractor.
+- Preprocess data for a multimodal task with a processor.
+
+The main tool for processing textual data is a tokenizer. Load a pretrained tokenizer with **AutoTokenizer.from_pretrained()** or any other available BERT tokenizer.
+```
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained("bert-base-cased")
+```
+Then pass your sentence to the tokenizer.
+
+```
+encoded_input = tokenizer("Do not meddle in the affairs of wizards, for they are subtle and quick to anger.")
+print(encoded_input)
+```
+```
+{'input_ids': [101, 2079, 2025, 19960, 10362, 1999, 1996, 3821, 1997, 16657, 1010, 2005, 2027, 2024, 11259, 1998, 4248, 2000, 4963, 1012, 102], 
+'token_type_ids': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+```
+
+The tokenizer returns a dictionary with three important itmes:
+
+- **input_ids** are the indices corresponding to each token in the sentence.
+- **attention_mask** indicates whether a token should be attended to or not.
+- **token_type_ids** identifies which sequence a token belongs to when there is more than one sequence.
 
 
 **Table**
