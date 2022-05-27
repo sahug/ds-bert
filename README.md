@@ -113,16 +113,16 @@ input = encoder(preprocess(["This is an amazing movie!"]))
 **Table**
 |Project|Coverage|
 |-------|--------|
-|BERT NLP - Session 1 - Introduction - BERT Machine Learning|Ktrain Text, Text Classifier, Ktrain Learner, DistilBert|
-|BERT NLP - Session 2 - Sentiment Classification Using BERT|Ktrain Text, Text Classifier, Ktrain Learner, Bert|
-|BERT NLP - Session 3 - Text Classification Using BERT|Tensorflow Text, Tensorflow Hub, KerasLayer, Bert Preprocess, Bert Encoder, Cosine Similarity, Functional API|
-|BERT NLP - Session 5 - Multi Class Classification Using BERT and Tensorflow|Tensorflow, BertTokenizer, Tensorflow Dataset, TFAutoModel, 2 Input Layers, Save Model |
-|BERT NLP - Session 6 - Intent Recognition Using BERT and Tensorflow|Tensorflow Hub, KerasLayer, Functional API|
-|BERT NLP - Session 8 - Disaster Tweets using BERT - 2|Tensorflow Hub, Tensorflow Text, KerasLayer, Bert Preprocess, Bert Encoder|
-|BERT NLP - Session 9 - Step by Step BERT|Tensorflow, ModelCheckpoint, TFAutoModel, AutoTokenizer, TQDM, Tokenizers, AUTOTUNE, Tensorflow Dataset|
-|BERT NLP - Session 10 - Custom Training Q&A using BERT|QuestionAnsweringModel, QuestionAnsweringArgs|
-|BERT NLP - Session 11 - Q&A using BERT|BertForQuestionAnswering, BertTokenizer, PyTorch|
-|BERT NLP - Session 12 - IMDB - Text Classification using BERT|DistilBERT, Tensorflow, Datasets, AutoTokenizer, DataCollatorWithPadding, TFAutoModelForSequenceClassification, Create_Optimizer|
-|BERT NLP - Session 13 - Named Entity Recognition or Token Classification using BERT|AutoTokenizer, Tensorflow, DistilBERT, DataCollatorForTokenClassification, Create_Optimizer, TFAutoModelForTokenClassification|
-|BERT NLP - Session 14 - Question Answering using BERT|AutoTokenizer, Tensorflow, DistilBERT, DefaultDataCollator, Create_Optimizer, TFAutoModelForQuestionAnswering|
+|BERT NLP - Introduction - BERT Machine Learning|Ktrain Text, Text Classifier, Ktrain Learner, DistilBert|
+|BERT NLP - Sentiment Classification Using BERT|Ktrain Text, Text Classifier, Ktrain Learner, Bert|
+|BERT NLP - Text Classification Using BERT|Tensorflow Text, Tensorflow Hub, KerasLayer, Bert Preprocess, Bert Encoder, Cosine Similarity, Functional API|
+|BERT NLP - Multi Class Classification Using BERT and Tensorflow|Tensorflow, BertTokenizer, Tensorflow Dataset, TFAutoModel, 2 Input Layers, Save Model |
+|BERT NLP - Intent Recognition Using BERT and Tensorflow|Tensorflow Hub, KerasLayer, Functional API|
+|BERT NLP - Disaster Tweets using BERT - 2|Tensorflow Hub, Tensorflow Text, KerasLayer, Bert Preprocess, Bert Encoder|
+|BERT NLP - Step by Step BERT|Tensorflow, ModelCheckpoint, TFAutoModel, AutoTokenizer, TQDM, Tokenizers, AUTOTUNE, Tensorflow Dataset|
+|BERT NLP - Custom Training Q&A using BERT|QuestionAnsweringModel, QuestionAnsweringArgs|
+|BERT NLP - Q&A using BERT|BertForQuestionAnswering, BertTokenizer, PyTorch|
+|BERT NLP - IMDB - Text Classification using BERT|DistilBERT, Tensorflow, Datasets, AutoTokenizer, DataCollatorWithPadding, TFAutoModelForSequenceClassification, Create_Optimizer|
+|BERT NLP - Named Entity Recognition or Token Classification using BERT|AutoTokenizer, Tensorflow, DistilBERT, DataCollatorForTokenClassification, Create_Optimizer, TFAutoModelForTokenClassification|
+|BERT NLP - Question Answering using BERT|AutoTokenizer, Tensorflow, DistilBERT, DefaultDataCollator, Create_Optimizer, TFAutoModelForQuestionAnswering|
 |BERT NLP - Sentiment140 - Sentiment Analysis using Tensorflow Hub and BERT|Tensorflow Hub, KerasLayer, Functional API|
