@@ -116,7 +116,8 @@ input = encoder(preprocess(["This is an amazing movie!"]))
 |BERT NLP - Introduction - BERT Machine Learning|Ktrain Text, Text Classifier, Ktrain Learner, DistilBert|
 |BERT NLP - Sentiment Classification Using BERT|Ktrain Text, Text Classifier, Ktrain Learner, Bert|
 |BERT NLP - Text Classification Using BERT|Tensorflow Text, Tensorflow Hub, KerasLayer, Bert Preprocess, Bert Encoder, Cosine Similarity, Functional API|
-|BERT NLP - Multi Class Classification Using BERT and Tensorflow|Tensorflow, BertTokenizer, Tensorflow Dataset, TFAutoModel, 2 Input Layers, Save Model |
+|BERT NLP - Multi Class Classification Using BERT and Tensorflow|Tensorflow, BertTokenizer, Tensorflow Dataset, TFAutoModel, 2 Input Layers, Save Model|
+|BERT NLP - Multi Label Classification Using BERT and Pytorch|BERT and PyTorch|
 |BERT NLP - Intent Recognition Using BERT and Tensorflow|Tensorflow Hub, KerasLayer, Functional API|
 |BERT NLP - Disaster Tweets using BERT and Tensorflow|Tensorflow Hub, Tensorflow Text, KerasLayer, Bert Preprocess, Bert Encoder|
 |BERT NLP - Step by Step BERT|Tensorflow, ModelCheckpoint, TFAutoModel, AutoTokenizer, TQDM, Tokenizers, AUTOTUNE, Tensorflow Dataset|
