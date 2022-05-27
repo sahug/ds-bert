@@ -1,16 +1,14 @@
 ### **HuggingFace**: https://huggingface.co/ 
 
-### **Steps**
-**Tensorflow**
+## **Steps**
+
 - Load Data
 - Split data to Train and Test
 - Preprocess Data using Tensorflow Hub
 - Encode data using Tensorflow Hub to input to BERT
 - Build, Compile and Train model
 
-**BERT**
-
-### **Preprocess**
+## **Preprocess**
 
 The standard or conventional procedure of pre-processing is a little bit tedious and also a user-centric procedure. The below steps are carried out under the hood of standard pre-processing techniques:
 
@@ -25,7 +23,7 @@ Nowadays all these pre-processing steps can be carried out by using transfer lea
 
 There are 2 ways we can pre-process our data.
 
-#### **1. Tensorflow Hub:**
+### **1. Tensorflow Hub:**
 
 TensorFlow Hub offers a variety of BERT and BERT-like models. For each BERT encoder, there is a matching preprocessing model. It transforms raw text to the numeric input tensors expected by the encoder, using TensorFlow ops provided by the **TF.text** library. Unlike preprocessing with pure Python, these ops can become part of a TensorFlow model for serving directly from text inputs. Each preprocessing model from TF Hub is already configured with a vocabulary and its associated text normalization logic and needs no further set-up.
 
@@ -53,7 +51,7 @@ The tokenizer returns a dictionary with three important itmes:
 
 Calling **preprocess()** like this transforms raw text inputs into a fixed-length input sequence for the BERT encoder. You can see that it consists of a tensor input_word_ids with numerical ids for each tokenized input, including start, end and padding tokens, plus two auxiliary tensors: an input_mask (that tells non-padding from padding tokens) and input_type_ids for each token (that can distinguish multiple text segments per input, which we will discuss below).
 
-#### **2. BERT Pre-processing Model**
+### **2. BERT Pre-processing Model**
 
 Before you can use your data in a model, the data needs to be processed into an acceptable format for the model. A model does not understand raw text, images or audio. These inputs need to be converted into numbers and assembled into tensors. In this tutorial, you will:
 
@@ -95,7 +93,7 @@ The tokenizer returns a dictionary with three important itmes:
 - The above preprocessing is for Text data. There are different preprocessing steps for Image and Audio data. You can check here: https://huggingface.co/docs/transformers/preprocessing
 - You can use preprocessing from Tensorflow Hub or from Huggingface BERT. Make sure the data is compatible with the Encoder or Pre Trained Model.
 
-### **Encoder**
+## **Encoder**
 When using the Tensorflow with BERT we need Encoder. The Encoder's outputs are the **pooled_output** to represents each input sequence as a whole, and the **sequence_output** to represent each input token in context. Either of those can be used as input to further model building.
 
 The **output** of the encoder **pooled_output** or **sequence_output** will be an input to the BERT Model. 
