@@ -28,6 +28,9 @@ There are 2 ways we can pre-process our data.
 TensorFlow Hub offers a variety of BERT and BERT-like models. For each BERT encoder, there is a matching preprocessing model. It transforms raw text to the numeric input tensors expected by the encoder, using TensorFlow ops provided by the **TF.text** library. Unlike preprocessing with pure Python, these ops can become part of a TensorFlow model for serving directly from text inputs. Each preprocessing model from TF Hub is already configured with a vocabulary and its associated text normalization logic and needs no further set-up.
 
 ```
+import tensorflow_hub as hub
+import tensorflow_text as text
+
 preprocess = hub.load('https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1')
 or
 preprocess = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/1")
