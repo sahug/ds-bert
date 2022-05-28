@@ -96,7 +96,7 @@ The tokenizer returns a dictionary with three important itmes:
 - The above preprocessing is for Text data. There are different preprocessing steps for Image and Audio data. You can check here: https://huggingface.co/docs/transformers/preprocessing
 - You can use preprocessing from Tensorflow Hub or from Huggingface BERT. Make sure the data is compatible with the Encoder or Pre Trained Model.
 
-## **Encoder**
+## **Encoder or Pre trained Model**
 When using the Tensorflow with BERT we need Encoder. The Encoder's outputs are the **pooled_output** to represents each input sequence as a whole, and the **sequence_output** to represent each input token in context. Either of those can be used as input to further model building.
 
 The **output** of the encoder **pooled_output** or **sequence_output** will be an input to the BERT Model. 
@@ -112,6 +112,31 @@ input = encoder(preprocess(["This is an amazing movie!"]))
 ```
 **Note:** *Encoder is a pre trained model that we fine tune on our test data.*
 
+
+## **FineTune**
+Once we have the data pre processed and we have the pre trained model we will train this model on out data. This phase is called Finetuneing.
+```
+import tensorflow as tf
+from tensorflow import keras
+from keras import activations
+
+inputs = keras.layers.Input(shape=(), dtype=tf.string, name="inputs")
+preprocess = pre_processor(inputs)
+encode = encode_input(preprocess)
+
+nn1 = keras.layers.Dropout(0.1, name="dropout")(encode["pooled_output"])
+nn1 = keras.layers.Dense(1, activation=keras.activations.sigmoid, name="output")(nn1)
+
+model = keras.Model(inputs=[inputs], outputs=[nn1])
+
+model.summary()
+
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), 
+              loss=tf.keras.losses.BinaryCrossentropy(),
+              metrics=METRICS)
+              
+model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=2)              
+```
 
 **Table**
 |Project|Coverage|
