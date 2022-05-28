@@ -153,7 +153,7 @@ model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=2)
 |BERT NLP - Step by Step BERT|Tensorflow, ModelCheckpoint, TFAutoModel, AutoTokenizer, TQDM, Tokenizers, AUTOTUNE, Tensorflow Dataset|
 |BERT NLP - Custom Training Q&A using BERT|QuestionAnsweringModel, QuestionAnsweringArgs|
 |BERT NLP - Question Answering using BERT and PyTorch|BertForQuestionAnswering, BertTokenizer, PyTorch|
-|BERT NLP - IMDB - Text Classification using BERT|DistilBERT, Tensorflow, Datasets, AutoTokenizer, DataCollatorWithPadding, TFAutoModelForSequenceClassification, Create_Optimizer|
+|BERT NLP - IMDB - Text Classification using BERT and Tensorflow|	Tensorflow Hub, KerasLayer, Functional API|
 |BERT NLP - Named Entity Recognition or Token Classification using BERT|Tensorflow Hub, KerasLayer, Functional API|
 |BERT NLP - Question Answering using BERT and Tensorflow|AutoTokenizer, Tensorflow, DistilBERT, DefaultDataCollator, Create_Optimizer, TFAutoModelForQuestionAnswering|
 |BERT NLP - Sentiment140 - Sentiment Analysis using Tensorflow Hub and BERT|Tensorflow Hub, KerasLayer, Functional API|
