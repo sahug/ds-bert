@@ -1,4 +1,6 @@
 ### **HuggingFace**: https://huggingface.co/ 
+### **Tensorflow BERT** https://blog.tensorflow.org/search?label=BERT
+### **Tensorflow Hub** https://tfhub.dev/
 
 ## **Steps**
 
