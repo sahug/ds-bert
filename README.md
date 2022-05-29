@@ -157,6 +157,9 @@ model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=2)
 
 #### **Text Classification**
 In this type of models we try to calssify the given text for example sentiment analysis or a movie review. In these cases we can have a tweet or a review written and we want to classify if the tweet or the review is good or bad or classify as any other sentiment. In these models we input the entire text, a tweet or review, as an input and its correspondent sentiment as output. Of course all input and outputs has to be pre processed, word embeding, label encoded to align with model requirement.
+
+![image](https://user-images.githubusercontent.com/72315097/170854533-4cc670b8-d380-4401-aa66-55c55f14c1a1.png)
+
 ```
 input: This is such a bad movie. I will never watch it again
 output: bad
@@ -167,6 +170,9 @@ Example: preprocessor(data["text"])
 ```
 #### **Named Entity Recognizion or Token Classification**
 In this type of model we try to identify it a given word is a name, place, animal, fruit, etc. The input in these case will be a word and output will be a corresponding recognized entity.
+
+![image](https://user-images.githubusercontent.com/72315097/170854609-1ee42e90-6686-4e15-9f86-181c52cc5e58.png)
+
 ```
 input: James
 output: name
@@ -177,6 +183,9 @@ Example: preprocessor(data["word"))
 ```
 #### **Question Answereing**
 In this type of model we ask bunch of question based on the context and try to answer those question based on the same context. In this model our input is a question and a context and output is the answer to those questions.
+
+![image](https://user-images.githubusercontent.com/72315097/170854617-8740e744-cb3e-499b-b54a-18860df36bb1.png)
+
 ```
 input:({question: "who is the richest man on earth?", context: "Elon Musk just passed Jeff Bezos to become the richest man on earth"})
 output: "Elon Musk is the richest man on earth."
