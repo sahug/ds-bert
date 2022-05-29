@@ -10,6 +10,15 @@
 - Encode data using Tensorflow Hub to input to BERT
 - Build, Compile and Train model
 
+## **Token and IDs**
+| Token | Meaning | Token ID |
+| --- | --- | --- |
+| **[PAD]** | Padding token, allows us to maintain same-length sequences (512 tokens for Bert) even when different sized sentences are fed in | 0 |
+| **[UNK]** | Used when a word is unknown to Bert | 100 |
+| **[CLS]** | Appears at the start of every sequence | 101 |
+| **[SEP]** | Indicates a seperator - used to indicate point between context-question and appears at end of sequences | 102 |
+| **[MASK]** | Used when masking tokens, for example in training with masked language modelling (MLM) | 103 |
+
 ## **Preprocess**
 
 The standard or conventional procedure of pre-processing is a little bit tedious and also a user-centric procedure. The below steps are carried out under the hood of standard pre-processing techniques:
