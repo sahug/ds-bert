@@ -65,7 +65,7 @@ The tokenizer returns a dictionary with three important itmes:
 
 Calling **preprocess()** like this transforms raw text inputs into a fixed-length input sequence for the BERT encoder. You can see that it consists of a tensor **input_word_ids** with numerical ids for each tokenized input, including start, end and padding tokens, plus two auxiliary tensors: an **input_mask** (that tells non-padding from padding tokens) and **input_type_ids** for each token (that can distinguish multiple text segments per input, which we will discuss below).
 
-### **2. BERT Pre-processing Model**
+### **2. BERT Pre-processing**
 
 Before you can use your data in a model, the data needs to be processed into an acceptable format for the model. A model does not understand raw text, images or audio. These inputs need to be converted into numbers and assembled into tensors. In this tutorial, you will:
 
@@ -99,9 +99,9 @@ print(encoded_input)
 
 The tokenizer returns a dictionary with three important itmes:
 
-- **input_ids:** Indices of input sequence tokens in the vocabulary.
-- **attention_mask:** Mask to avoid performing attention on padding token indices. Mask values selected in [0, 1]. *1 for tokens that are not masked, 0 for tokens that are masked.*
-- **token_type_ids:** Segment token indices to indicate first and second portions of the inputs. Indices are selected in [0, 1]. *0 corresponds to a sentence A token, 1 corresponds to a sentence B token.*
+- **input_ids:** The input ids are often the only required parameters to be passed to the model as input. They are token indices, numerical representations of tokens building the sequences that will be used as input by the model.
+- **attention_mask:** This argument indicates to the model which tokens should be attended to, and which should not. Mask to avoid performing attention on padding token indices. Mask values selected in [0, 1]. *1 for tokens that are not masked, 0 for tokens that are masked.*
+- **token_type_ids:** These require two different sequences to be joined in a single “input_ids” entry, which usually is performed with the help of special tokens, such as the classifier ([CLS]) and separator ([SEP]) tokens. For example, the BERT model builds its two sequence input as such: `[CLS] SEQUENCE_A [SEP] SEQUENCE_B [SEP]`
 
 **Note:**
 - The above preprocessing is for Text data. There are different preprocessing steps for Image and Audio data. You can check here: https://huggingface.co/docs/transformers/preprocessing
