@@ -127,7 +127,8 @@ input = encoder(preprocess(["This is an amazing movie!"]))
 **Note:** *Encoder is a pre trained model that we fine tune on our test data.*
 
 ## **Finetune**
-Once we have the data pre processed and we have the pre trained model we will train this model on out data. This phase is called Finetuneing.
+Once we have the data pre processed and we have the pre trained model we will train this model on out data. This phase is called Finetuneing. Here we have added additional layers, Dropout and Dense. You may need it ot you may not depending on what you want to achieve. You can just remove these layers and have the BERT layers only in the model.
+
 ```
 import tensorflow as tf
 from tensorflow import keras
