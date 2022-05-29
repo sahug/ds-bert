@@ -50,11 +50,11 @@ input = preprocess(["This is an amazing movie!"])
  ```
 The tokenizer returns a dictionary with three important itmes:
 
-- **input_word_ids** are the indices corresponding to each token in the sentence.
-- **input_mask** indicates whether a token should be attended to or not.
-- **input_type_ids** identifies which sequence a token belongs to when there is more than one sequence.
+- **input_word_ids:** Are the indices corresponding to each token in the sentence. Tensor of shape [batch_size, seq_length] with the token ids of the packed input sequence (that is, including a *start-of-sequence token, end-of-segment tokens, and padding*).
+- **input_mask:** Indicates whether a token should be attended to or not. Tensor of shape [batch_size, seq_length] with value **1** at the position of all input tokens present before padding and value **0** for the padding tokens.
+- **input_type_ids:** Identifies which sequence a token belongs to when there is more than one sequence. Tensor of shape [batch_size, seq_length] with the index of the input segment that gave rise to the input token at the respective position. The *first input segment (index 0) includes the start-of-sequence token and its end-of-segment token. The second and later segments (if present) include their respective end-of-segment token. Padding tokens get index 0 again.*
 
-Calling **preprocess()** like this transforms raw text inputs into a fixed-length input sequence for the BERT encoder. You can see that it consists of a tensor input_word_ids with numerical ids for each tokenized input, including start, end and padding tokens, plus two auxiliary tensors: an input_mask (that tells non-padding from padding tokens) and input_type_ids for each token (that can distinguish multiple text segments per input, which we will discuss below).
+Calling **preprocess()** like this transforms raw text inputs into a fixed-length input sequence for the BERT encoder. You can see that it consists of a tensor **input_word_ids** with numerical ids for each tokenized input, including start, end and padding tokens, plus two auxiliary tensors: an **input_mask** (that tells non-padding from padding tokens) and **input_type_ids** for each token (that can distinguish multiple text segments per input, which we will discuss below).
 
 ### **2. BERT Pre-processing Model**
 
@@ -90,9 +90,9 @@ print(encoded_input)
 
 The tokenizer returns a dictionary with three important itmes:
 
-- **input_ids** are the indices corresponding to each token in the sentence.
-- **attention_mask** indicates whether a token should be attended to or not.
-- **token_type_ids** identifies which sequence a token belongs to when there is more than one sequence.
+- **input_ids:** Indices of input sequence tokens in the vocabulary.
+- **attention_mask:** Mask to avoid performing attention on padding token indices. Mask values selected in [0, 1]. *1 for tokens that are not masked, 0 for tokens that are masked.*
+- **token_type_ids:** Segment token indices to indicate first and second portions of the inputs. Indices are selected in [0, 1]. *0 corresponds to a sentence A token, 1 corresponds to a sentence B token.*
 
 **Note:**
 - The above preprocessing is for Text data. There are different preprocessing steps for Image and Audio data. You can check here: https://huggingface.co/docs/transformers/preprocessing
@@ -110,12 +110,14 @@ or
 encoder = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/4")
 
 input = encoder(preprocess(["This is an amazing movie!"]))
-
 ```
+- **sequence_output:** Tensor of shape [batch_size, seq_length, dim] with the context-aware embedding of each token of every packed input sequence.
+- **pooled_output:** Tensor of shape [batch_size, dim] with the embedding of each input sequence as a whole, derived from sequence_output in some trainable manner.
+- **default:** Required by the API for text embeddings with preprocessed inputs: a float32 Tensor of shape [batch_size, dim] with the embedding of each input sequence. (This might be just an alias of pooled_output.)
+
 **Note:** *Encoder is a pre trained model that we fine tune on our test data.*
 
-
-## **FineTune**
+## **Finetune**
 Once we have the data pre processed and we have the pre trained model we will train this model on out data. This phase is called Finetuneing.
 ```
 import tensorflow as tf
@@ -142,30 +144,38 @@ model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=2)
 
 ### **Different Models**
 
+**Note:** Input here are the columns that are feed to Tokenizer and passed down to encoder and the model. Output could be 1 or multiple based on model. While preparing the input we have to make sure we have the inputs as mentioned below. 
+
 #### **Text Classification**
 In this type of models we try to calssify the given text for example sentiment analysis or a movie review. In these cases we can have a tweet or a review written and we want to classify if the tweet or the review is good or bad or classify as any other sentiment. In these models we input the entire text, a tweet or review, as an input and its correspondent sentiment as output. Of course all input and outputs has to be pre processed, word embeding, label encoded to align with model requirement.
 ```
 input: This is such a bad movie. I will never watch it again
 output: bad
+
+Example: preprocessor(data["text"])
+
+**Note:** data has 1 column with text or a sentence.
 ```
 #### **Named Entity Recognizion or Token Classification**
 In this type of model we try to identify it a given word is a name, place, animal, fruit, etc. The input in these case will be a word and output will be a corresponding recognized entity.
 ```
 input: James
 output: name
+
+Example: preprocessor(data["word"))
+
+**Note:** data has 1 column with only 1 word.
 ```
 #### **Question Answereing**
 In this type of model we ask bunch of question based on the context and try to answer those question based on the same context. In this model our input is a question and a context and output is the answer to those questions.
 ```
 input:({question: "who is the richest man on earth?", context: "Elon Musk just passed Jeff Bezos to become the richest man on earth"})
 output: "Elon Musk is the richest man on earth."
+
+Example: preprocessor(data["question"], data["context"]) or preprocessor(data): 
+
+**Note:** data has 2 columns, question and context.
 ```
-
-
-
-
-
-
 
 **Table**
 |Project|Coverage|
