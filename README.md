@@ -183,15 +183,29 @@ Example: preprocessor(data["word"))
 **Note:** data has 1 column with only 1 word.
 ```
 #### **Question Answereing**
-In this type of model we ask bunch of question based on the context and try to answer those question based on the same context. In this model our input is a question and a context and output is the answer to those questions.
+Depends on if the problem is a general question answering or a context based. In context based Q&A the answer is embedded in the context. 
+
+The input for the general Q&A is a question and the context. We then build model and ask questions to get the ansers.
+
+In context based Q&A we input question, context, start and end sequence of the answer embedded in the context. 
 
 ![image](https://user-images.githubusercontent.com/72315097/170854617-8740e744-cb3e-499b-b54a-18860df36bb1.png)
 
+**General Q&A**
 ```
 input:({question: "who is the richest man on earth?", context: "Elon Musk just passed Jeff Bezos to become the richest man on earth"})
 output: "Elon Musk is the richest man on earth."
 
 Example: preprocessor(data["question"], data["context"]) or preprocessor(data): 
+
+**Note:** data has 2 columns, question and context.
+```
+**Context Based Q&A**
+```
+input:({question: "who is the richest man on earth?", context: "Elon Musk just passed Jeff Bezos to become the richest man on earth", start: 0, end: 9})
+output: "Elon Musk"
+
+Example: preprocessor(data["question"], data["context"], data["start"], data["end"]) or preprocessor(data): 
 
 **Note:** data has 2 columns, question and context.
 ```
