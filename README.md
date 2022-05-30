@@ -199,7 +199,7 @@ Example: preprocessor(data["question"], data["context"]) or preprocessor(data):
 **Table**
 |Project|Coverage|
 |-------|--------|
-|BERT NLP - Tokenizers|BertTokenizer, Tokenizer, Encode, Encode Plus, Batch Encode Plus, Special Tokens|
+|BERT NLP - Tokenizers|BertTokenizer, Tokenizer, Encode, Encode Plus, Batch Encode Plus, Special Tokens, Tensorflow Preprocessor|
 |BERT NLP - Introduction - BERT Machine Learning|Ktrain Text, Text Classifier, Ktrain Learner, DistilBert|
 |BERT NLP - Sentiment Classification Using BERT and Tensorflow|Ktrain Text, Text Classifier, Ktrain Learner, Bert|
 |BERT NLP - Text Classification Using BERT and Tensorflow|Tensorflow Text, Tensorflow Hub, KerasLayer, Bert Preprocess, Bert Encoder, Cosine Similarity, Functional API|
