@@ -216,7 +216,7 @@ In context based Q&A we input question, context, start and end sequence of the a
 
 ![image](https://user-images.githubusercontent.com/72315097/170854617-8740e744-cb3e-499b-b54a-18860df36bb1.png)
 
-**General Q&A**
+**Extractive:** Extract the answer from the given context.
 ```
 input:({question: "who is the richest man on earth?", context: "Elon Musk just passed Jeff Bezos to become the richest man on earth"})
 output: "Elon Musk is the richest man on earth."
@@ -225,7 +225,7 @@ Example: preprocessor(data["question"], data["context"]) or preprocessor(data):
 
 **Note:** data has 2 columns, question and context.
 ```
-**Context Based Q&A**
+**Abstractive:** Generate an answer from the context that correctly answers the question.
 ```
 Example: BERT NLP - Question Answering using BERT and Tensorflow.
 
