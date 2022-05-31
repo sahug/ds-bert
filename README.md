@@ -174,14 +174,32 @@ In this type of model we try to identify it a given word is a name, place, anima
 
 ![image](https://user-images.githubusercontent.com/72315097/170854609-1ee42e90-6686-4e15-9f86-181c52cc5e58.png)
 
+**Word by Word**
 ```
 input: James
 output: name
 
-Example: preprocessor(data["word"))
+preprocessor(data["word"))
+
+O/P of the preprocessor is then feed to encoder or pre trained model
 
 **Note:** data has 1 column with only 1 word.
 ```
+**Sentence**
+```
+from transformers import DataCollatorForTokenClassification
+data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer, return_tensors="tf")
+tf_train_set = tokenized_wnut["train"].to_tf_dataset(
+    columns=["attention_mask", "input_ids", "labels"],
+    shuffle=True,
+    batch_size=16,
+    collate_fn=data_collator,
+)
+
+model.fit(x=tf_train_set, validation_data=tf_validation_set, epochs=3)
+
+```
+
 #### **Question Answereing**
 Depends on if the problem is a general question answering or a context based. In context based Q&A the answer is embedded in the context. 
 
