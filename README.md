@@ -225,6 +225,7 @@ Example: preprocessor(data["question"], data["context"], data["start"], data["en
 |BERT NLP - Custom Training Q&A using BERT|QuestionAnsweringModel, QuestionAnsweringArgs|
 |BERT NLP - Question Answering using BERT and PyTorch|BertForQuestionAnswering, BertTokenizer, PyTorch|
 |BERT NLP - IMDB - Text Classification using BERT and Tensorflow|	Tensorflow Hub, KerasLayer, Functional API|
-|BERT NLP - Named Entity Recognition or Token Classification using BERT|Tensorflow Hub, KerasLayer, Functional API|
+|BERT NLP - Named Entity Recognition or Token Classification using BERT - CONLL|Tensorflow Hub, KerasLayer, Functional API|
+|BERT NLP - Named Entity Recognition or Token Classification using BERT - WNUT|AutoTokenizer, DataCollatorForTokenClassification, Create_Optimizer, TFAutoModelForTokenClassification|
 |BERT NLP - Question Answering using BERT and Tensorflow|AutoTokenizer, Tensorflow, DistilBERT, DefaultDataCollator, Create_Optimizer, TFAutoModelForQuestionAnswering|
 |BERT NLP - Sentiment140 - Sentiment Analysis using Tensorflow Hub and BERT|Tensorflow Hub, KerasLayer, Functional API|
