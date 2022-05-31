@@ -10,7 +10,7 @@
 - Encode data using Tensorflow Hub to input to BERT
 - Build, Compile and Train model
 
-## **Token and IDs**
+## **Special Token and IDs**
 | Token | Meaning | Token ID |
 | --- | --- | --- |
 | **[PAD]** | Padding token, allows us to maintain same-length sequences (512 tokens for Bert) even when different sized sentences are fed in | 0 |
