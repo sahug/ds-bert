@@ -255,4 +255,5 @@ Example: preprocessor(data["question"], data["context"], data["start"], data["en
 |BERT NLP - Question Answering using BERT and Tensorflow|AutoTokenizer, Tensorflow, DistilBERT, DefaultDataCollator, Create_Optimizer, TFAutoModelForQuestionAnswering|
 |BERT NLP - Sentiment140 - Sentiment Analysis using Tensorflow Hub and BERT|Tensorflow Hub, KerasLayer, Functional API|
 |BERT NLP - Casual Language Modeling using BERT|Flatten, AutoTokenizer, DataCollatorForLanguageModeling, AdamWeightDecay, TFAutoModelForCausalLM|
+|BERT NLP - Masked Language Modeling using BERT|Flatten, AutoTokenizer, DataCollatorForLanguageModeling, AdamWeightDecay, TFAutoModelForCausalLM|
 |BERT NLP - Text Summarization using BERT|AutoTokenizer, DataCollatorForSeq2Seq, AdamWeightDecay, TFAutoModelForSeq2SeqLM, BERT, Tensorflow|
