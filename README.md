@@ -157,11 +157,14 @@ model.fit(x_train, y_train, validation_data=(x_test, y_test), epochs=2)
 **Note:** Input here are the columns that are feed to Tokenizer and passed down to encoder and the model. Output could be 1 or multiple based on model. While preparing the input we have to make sure we have the inputs as mentioned below. 
 
 #### **Text Classification**
+
 In this type of models we try to calssify the given text for example sentiment analysis or a movie review. In these cases we can have a tweet or a review written and we want to classify if the tweet or the review is good or bad or classify as any other sentiment. In these models we input the entire text, a tweet or review, as an input and its correspondent sentiment as output. Of course all input and outputs has to be pre processed, word embeding, label encoded to align with model requirement.
 
 ![image](https://user-images.githubusercontent.com/72315097/170854533-4cc670b8-d380-4401-aa66-55c55f14c1a1.png)
 
 ```
+Example: BERT NLP - IMDB - Text Classification using BERT and Tensorflow
+
 input: This is such a bad movie. I will never watch it again
 output: bad
 
@@ -176,6 +179,8 @@ In this type of model we try to identify it a given word is a name, place, anima
 
 **Word by Word**
 ```
+Example: BERT NLP - Named Entity Recognition or Token Classification using BERT
+
 input: James
 output: name
 
@@ -187,6 +192,8 @@ O/P of the preprocessor is then feed to encoder or pre trained model
 ```
 **Sentence**
 ```
+Example: BERT NLP - Named Entity Recognition or Token Classification using BERT - WNUT
+
 from transformers import DataCollatorForTokenClassification
 data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer, return_tensors="tf")
 tf_train_set = tokenized_wnut["train"].to_tf_dataset(
@@ -220,6 +227,8 @@ Example: preprocessor(data["question"], data["context"]) or preprocessor(data):
 ```
 **Context Based Q&A**
 ```
+Example: BERT NLP - Question Answering using BERT and Tensorflow.
+
 input:({question: "who is the richest man on earth?", context: "Elon Musk just passed Jeff Bezos to become the richest man on earth", start: 0, end: 9})
 output: "Elon Musk"
 
