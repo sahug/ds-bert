@@ -245,12 +245,10 @@ Example: preprocessor(data["question"], data["context"], data["start"], data["en
 |BERT NLP - Sentiment Classification Using BERT and Tensorflow|Ktrain Text, Text Classifier, Ktrain Learner, Bert|
 |BERT NLP - Text Classification Using BERT and Tensorflow|Tensorflow Text, Tensorflow Hub, KerasLayer, Bert Preprocess, Bert Encoder, Cosine Similarity, Functional API|
 |BERT NLP - Multi Class Classification Using BERT and Tensorflow|Tensorflow Hub, KerasLayer, Functional API|
-|BERT NLP - Multi Label Classification Using BERT and Pytorch|BERT and PyTorch|
 |BERT NLP - Intent Recognition Using BERT and Tensorflow|Tensorflow Hub, KerasLayer, Functional API|
 |BERT NLP - Disaster Tweets using BERT and Tensorflow|Tensorflow Hub, Tensorflow Text, KerasLayer, Bert Preprocess, Bert Encoder|
 |BERT NLP - Step by Step BERT|Tensorflow, ModelCheckpoint, TFAutoModel, AutoTokenizer, TQDM, Tokenizers, AUTOTUNE, Tensorflow Dataset|
 |BERT NLP - Custom Training Q&A using BERT|QuestionAnsweringModel, QuestionAnsweringArgs|
-|BERT NLP - Question Answering using BERT and PyTorch|BertForQuestionAnswering, BertTokenizer, PyTorch|
 |BERT NLP - IMDB - Text Classification using BERT and Tensorflow|	Tensorflow Hub, KerasLayer, Functional API|
 |BERT NLP - Named Entity Recognition or Token Classification using BERT - CONLL|Tensorflow Hub, KerasLayer, Functional API|
 |BERT NLP - Named Entity Recognition or Token Classification using BERT - WNUT|AutoTokenizer, DataCollatorForTokenClassification, Create_Optimizer, TFAutoModelForTokenClassification|
