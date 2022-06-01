@@ -30,6 +30,8 @@ The standard or conventional procedure of pre-processing is a little bit tedious
 - Stemming and Lemmatization
 - Word embeddings using CountVectorizer and TF-IDF  
 
+BERT has tokens for numbers, punctuation, and special characters (e.g. #@!%).
+ 
 Nowadays all these pre-processing steps can be carried out by using transfer learning modules like BERT. BERT does this using the pre trained model. So we don't have to perform each of these tasks individually. Half of BERT’s success can be attributed to this pre-training phase. 
 
 There are 2 ways we can pre-process our data.
