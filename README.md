@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | **[PAD]** | Padding token, allows us to maintain same-length sequences (512 tokens for Bert) even when different sized sentences are fed in | 0 |
 | **[UNK]** | Used when a word is unknown to Bert | 100 |
-| **[CLS]** | Appears at the start of every sequence | 101 |
+| **[CLS]** | Appears at the start of every sequence. CLS stands for classification and its there to represent sentence-level classification. | 101 |
 | **[SEP]** | Indicates a seperator - used to indicate point between context-question and appears at end of sequences | 102 |
 | **[MASK]** | Used when masking tokens, for example in training with masked language modelling (MLM) | 103 |
 
